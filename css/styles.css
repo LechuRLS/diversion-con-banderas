@@ -1,10 +1,134 @@
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f0f0;
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(45, 45, 45);
+  padding: 20px;
+  text-align: center;
+  color: #333;
 }
 
 h1 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  background-color: rgb(210, 226, 241);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.country-card:hover {
+  transform: scale(1.05);
+}
+
+.country-name {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: rgb(60, 60, 60);;
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-flag {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.modal-content h2 {
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+.modal-content p {
+  margin: 8px 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  border: none;
   color: #333;
+  transition: color 0.2s;
+}
+
+.close-button:hover {
+  color: red;
+}
+
+#countries-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  padding: 10px;
+}
+
+.country-card {
+  background-color: rgb(60, 60, 60);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 120px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.flag {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.flag:hover {
+  transform: scale(1.1);
+}
+
+.country-name {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
 }
